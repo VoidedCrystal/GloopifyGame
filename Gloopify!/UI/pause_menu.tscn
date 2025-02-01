@@ -4,18 +4,24 @@
 
 [node name="Pause Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.3
+anchor_bottom = 0.304
+offset_left = -104.0
+offset_top = -80.0
+offset_right = -680.0
+offset_bottom = -408.32
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_j2kof")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visibility_layer = 4
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1088.0
+offset_left = -1472.0
+offset_top = -816.0
+offset_right = 3528.0
+offset_bottom = 2024.0
 color = Color(0, 0, 0, 0.529412)
 
 [node name="Quit" type="Button" parent="."]
