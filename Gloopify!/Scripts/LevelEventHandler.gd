@@ -82,7 +82,7 @@ func check_cupcakes():
 		var levelID = "level" + str(i)
 		if levelID in data:
 			for j in range(1, 6):
-				var cupcakeID = "c" + str(i)
+				var cupcakeID = "c" + str(j)
 				if cupcakeID in data[levelID]:
 					cupcakes.append(data[levelID][cupcakeID])
 	return cupcakes
