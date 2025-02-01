@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://7pqqe1y6kyax"]
+[gd_scene load_steps=3 format=3 uid="uid://7pqqe1y6kyax"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_a1617"]
+[ext_resource type="AudioStream" uid="uid://dn5e36xpqwnfq" path="res://Assets/Audio/Main-menu-2.mp3" id="2_ul32s"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -18,20 +19,29 @@ script = ExtResource("1_a1617")
 [node name="Play" type="Button" parent="."]
 layout_mode = 2
 offset_left = 778.0
-offset_top = 423.0
+offset_top = 343.0
 offset_right = 1217.0
-offset_bottom = 527.0
+offset_bottom = 447.0
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
 [node name="Exit_Quit" type="Button" parent="."]
 layout_mode = 2
 offset_left = 786.0
-offset_top = 679.0
+offset_top = 727.0
 offset_right = 1211.0
-offset_bottom = 783.0
+offset_bottom = 831.0
 theme_override_font_sizes/font_size = 50
 text = "Exit"
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 2
+offset_left = 786.0
+offset_top = 599.0
+offset_right = 1211.0
+offset_bottom = 703.0
+theme_override_font_sizes/font_size = 50
+text = "Credits"
 
 [node name="Cupcakes" type="Button" parent="."]
 layout_mode = 2
@@ -45,22 +55,28 @@ text = "Cupcakes"
 [node name="Options" type="Button" parent="."]
 layout_mode = 2
 offset_left = 786.0
-offset_top = 550.0
+offset_top = 470.0
 offset_right = 1211.0
-offset_bottom = 655.0
+offset_bottom = 575.0
 theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 634.0
-offset_top = 271.0
+offset_top = 191.0
 offset_right = 1400.0
-offset_bottom = 374.0
+offset_bottom = 294.0
 theme_override_font_sizes/font_size = 75
 text = "Gloopify! (Name WIP)"
 
+[node name="Main Menu Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ul32s")
+autoplay = true
+parameters/looping = true
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit_Quit" to="." method="_on_exit_quit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Cupcakes" to="." method="_on_cupcakes_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]

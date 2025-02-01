@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsq3f16jlkubp"]
+
+[ext_resource type="Script" path="res://UI/credits.gd" id="1_6n1y3"]
+
+[sub_resource type="SystemFont" id="SystemFont_c5isy"]
+font_italic = true
+
+[sub_resource type="FontVariation" id="FontVariation_wnqxj"]
+base_font = SubResource("SystemFont_c5isy")
+spacing_glyph = 3
+spacing_space = 5
+spacing_top = 27
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6n1y3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.5
+offset_right = 256.5
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 150
+text = "Credits"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -603.5
+offset_top = 254.0
+offset_right = 603.5
+offset_bottom = 647.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_wnqxj")
+theme_override_font_sizes/font_size = 50
+text = "Programmers:  Kyle Herman, Kayla Kuntsher
+Artist: Matthew Breshanan
+Level Designer: Simon Warner
+Audio Design: Simon Warner"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 864.0
+offset_right = 376.0
+offset_bottom = 1009.0
+theme_override_font_sizes/font_size = 100
+text = "BACK"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
