@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://cs7fisp5q02se"]
+[gd_scene load_steps=2 format=3 uid="uid://cs7fisp5q02se"]
+
+[ext_resource type="PackedScene" uid="uid://cdqc43axjnpsd" path="res://UI/pause_menu.tscn" id="1_rdj52"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Pause Menu" parent="." instance=ExtResource("1_rdj52")]
+visible = false
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 1155.0
+offset_bottom = 652.0
