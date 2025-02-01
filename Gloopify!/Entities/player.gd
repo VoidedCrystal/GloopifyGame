@@ -25,11 +25,16 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 		
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		if is_on_wall():
+			velocity += get_gravity() * delta * 0.4
+		else:
+			velocity += get_gravity() * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move-left", "move-right")
@@ -42,6 +47,13 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			current_direction = 0
 			speed = BASE_SPEED
+		
+	if Input.is_action_just_pressed("jump") and not is_on_floor() and is_on_wall():
+		var jumpdir = get_wall_normal()
+		print(jumpdir)
+		velocity.x = jumpdir.x * speed * 7
+		print(velocity.x)
+		velocity.y = JUMP_VELOCITY
 	
 	if Input.is_action_pressed("move-left"):
 		current_direction = -1

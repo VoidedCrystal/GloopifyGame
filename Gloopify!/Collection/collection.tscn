@@ -148,6 +148,7 @@ scale = Vector2(128, 120)
 texture = SubResource("PlaceholderTexture2D_ssqtn")
 
 [node name="Main Menu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1664.0
 offset_top = 24.0
 offset_right = 1896.0
