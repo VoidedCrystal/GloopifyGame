@@ -15,10 +15,6 @@ run/main_scene="res://UI/Main_Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Assets/TEMP.svg"
 
-[autoload]
-
-LevelEventHandler="*res://Scripts/LevelEventHandler.gd"
-
 [display]
 
 window/size/viewport_width=1920

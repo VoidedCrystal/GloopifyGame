@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://jl75mgscvc3f"]
+
+[ext_resource type="Script" path="res://UI/level_select.gd" id="1_la4qf"]
+[ext_resource type="PackedScene" uid="uid://bx658kweduvqk" path="res://UI/levelSet.tscn" id="2_i5jtr"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_la4qf")
+
+[node name="LevelSet" parent="." node_paths=PackedStringArray("next_level_right") instance=ExtResource("2_i5jtr")]
+offset_top = 8.0
+offset_bottom = 136.0
+next_scene_path = "res://Levels/TestLevel.tscn"
+next_level_right = NodePath("../LevelSet2")
+
+[node name="LevelSet2" parent="." node_paths=PackedStringArray("next_level_right", "next_level_left") instance=ExtResource("2_i5jtr")]
+visible = false
+offset_top = 8.0
+offset_bottom = 136.0
+level_name = "2"
+next_level_right = NodePath("../LevelSet3")
+next_level_left = NodePath("../LevelSet")
+
+[node name="LevelSet3" parent="." node_paths=PackedStringArray("next_level_right", "next_level_left") instance=ExtResource("2_i5jtr")]
+visible = false
+offset_top = 8.0
+offset_bottom = 136.0
+level_name = "3"
+next_level_right = NodePath("../LevelSet4")
+next_level_left = NodePath("../LevelSet2")
+
+[node name="LevelSet4" parent="." node_paths=PackedStringArray("next_level_right", "next_level_left") instance=ExtResource("2_i5jtr")]
+visible = false
+offset_top = 8.0
+offset_bottom = 136.0
+level_name = "4"
+next_level_right = NodePath("../LevelSet5")
+next_level_left = NodePath("../LevelSet3")
+
+[node name="LevelSet5" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("2_i5jtr")]
+visible = false
+offset_top = 8.0
+offset_bottom = 136.0
+level_name = "5"
+next_level_left = NodePath("../LevelSet4")
