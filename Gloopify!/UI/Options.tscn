@@ -10,7 +10,7 @@ grow_vertical = 2
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 54.0
-offset_right = 424.0
-offset_bottom = 75.0
+offset_left = 427.0
+offset_top = 143.0
+offset_right = 713.0
+offset_bottom = 164.0
