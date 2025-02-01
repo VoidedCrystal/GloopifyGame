@@ -18,3 +18,7 @@ func _ready() -> void:
 
 func color_cake(cake):
 	pass #Replace when sprites added
+
+
+func _on_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://UI/Main_Menu.tscn")
