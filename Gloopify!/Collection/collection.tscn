@@ -1,8 +1,126 @@
-[gd_scene load_steps=3 format=3 uid="uid://cubah1xbx1sx1"]
+[gd_scene load_steps=14 format=3 uid="uid://cubah1xbx1sx1"]
 
 [ext_resource type="Script" path="res://Collection/collection.gd" id="1_ei8ft"]
+[ext_resource type="Texture2D" uid="uid://dntkdwtot77nq" path="res://Assets/CupcakeSprites.png" id="2_d87bg"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ssqtn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_exof7"]
+atlas = ExtResource("2_d87bg")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00mop"]
+atlas = ExtResource("2_d87bg")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmrxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exof7")
+}],
+"loop": true,
+"name": &"Lock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00mop")
+}],
+"loop": true,
+"name": &"Unlock",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ly2y"]
+atlas = ExtResource("2_d87bg")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4btjk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exof7")
+}],
+"loop": true,
+"name": &"Lock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ly2y")
+}],
+"loop": true,
+"name": &"Unlock",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkxya"]
+atlas = ExtResource("2_d87bg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ry3xm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exof7")
+}],
+"loop": true,
+"name": &"Lock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkxya")
+}],
+"loop": true,
+"name": &"Unlock",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1is"]
+atlas = ExtResource("2_d87bg")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lqei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exof7")
+}],
+"loop": true,
+"name": &"Lock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1is")
+}],
+"loop": true,
+"name": &"Unlock",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh4ex"]
+atlas = ExtResource("2_d87bg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7s7px"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exof7")
+}],
+"loop": true,
+"name": &"Lock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh4ex")
+}],
+"loop": true,
+"name": &"Unlock",
+"speed": 5.0
+}]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -22,130 +140,180 @@ offset_bottom = 144.0
 theme_override_font_sizes/font_size = 75
 text = "Collection"
 
-[node name="Cupcake1" type="Sprite2D" parent="."]
-position = Vector2(320.125, 224)
-scale = Vector2(128, 127.85)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake1" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 215.925)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_nmrxi")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake2" type="Sprite2D" parent="."]
-position = Vector2(640, 224)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake2" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 216)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_nmrxi")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake3" type="Sprite2D" parent="."]
-position = Vector2(960.125, 224)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake3" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 216)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_nmrxi")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake4" type="Sprite2D" parent="."]
-position = Vector2(1280.12, 224)
-scale = Vector2(128.25, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 216)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_nmrxi")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake5" type="Sprite2D" parent="."]
-position = Vector2(1600.12, 224)
-scale = Vector2(128.25, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake5" type="AnimatedSprite2D" parent="."]
+position = Vector2(1600, 216)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_nmrxi")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake6" type="Sprite2D" parent="."]
-position = Vector2(320.125, 416)
-scale = Vector2(128.25, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake6" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 407.925)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_4btjk")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake7" type="Sprite2D" parent="."]
-position = Vector2(640, 416)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake7" type="AnimatedSprite2D" parent="."]
+position = Vector2(648, 408)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_4btjk")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake8" type="Sprite2D" parent="."]
-position = Vector2(960.125, 416)
-scale = Vector2(128.25, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake8" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 408)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_4btjk")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake9" type="Sprite2D" parent="."]
-position = Vector2(1280.13, 416)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake9" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 408)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_4btjk")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake10" type="Sprite2D" parent="."]
-position = Vector2(1600.12, 416)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake10" type="AnimatedSprite2D" parent="."]
+position = Vector2(1600, 416)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_4btjk")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake11" type="Sprite2D" parent="."]
-position = Vector2(320.125, 608)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake11" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 599.925)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_ry3xm")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake12" type="Sprite2D" parent="."]
-position = Vector2(640, 608)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake12" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 600)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_ry3xm")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake13" type="Sprite2D" parent="."]
-position = Vector2(960.125, 608)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake13" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 600)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_ry3xm")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake14" type="Sprite2D" parent="."]
-position = Vector2(1280.12, 608)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake14" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 600)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_ry3xm")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake15" type="Sprite2D" parent="."]
-position = Vector2(1600.13, 608)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake15" type="AnimatedSprite2D" parent="."]
+position = Vector2(1600, 600)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_ry3xm")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake16" type="Sprite2D" parent="."]
-position = Vector2(320.125, 800)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake16" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 791.925)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_1lqei")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake17" type="Sprite2D" parent="."]
-position = Vector2(640, 800)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake17" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 792)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_1lqei")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake18" type="Sprite2D" parent="."]
-position = Vector2(960.125, 800)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake18" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 792)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_1lqei")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake19" type="Sprite2D" parent="."]
-position = Vector2(1280.12, 800)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake19" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 792)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_1lqei")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake20" type="Sprite2D" parent="."]
-position = Vector2(1600.12, 800)
-scale = Vector2(128, 128)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake20" type="AnimatedSprite2D" parent="."]
+position = Vector2(1600, 792)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_1lqei")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake21" type="Sprite2D" parent="."]
-position = Vector2(320.125, 988)
-scale = Vector2(128, 120)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake21" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 983.925)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_7s7px")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake22" type="Sprite2D" parent="."]
-position = Vector2(640, 988)
-scale = Vector2(128, 120)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake22" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 984)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_7s7px")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake23" type="Sprite2D" parent="."]
-position = Vector2(960.125, 988)
-scale = Vector2(128, 120)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake23" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 984)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_7s7px")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake24" type="Sprite2D" parent="."]
-position = Vector2(1280.12, 988)
-scale = Vector2(128, 120)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake24" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 984)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_7s7px")
+animation = &"Lock"
+autoplay = "Lock"
 
-[node name="Cupcake25" type="Sprite2D" parent="."]
-position = Vector2(1600.12, 988)
-scale = Vector2(128, 120)
-texture = SubResource("PlaceholderTexture2D_ssqtn")
+[node name="Cupcake25" type="AnimatedSprite2D" parent="."]
+position = Vector2(1608, 984)
+scale = Vector2(4, 3.99531)
+sprite_frames = SubResource("SpriteFrames_7s7px")
+animation = &"Lock"
+autoplay = "Lock"
 
 [node name="Main Menu" type="Button" parent="."]
 layout_mode = 0
