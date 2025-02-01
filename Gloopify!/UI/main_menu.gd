@@ -1,7 +1,7 @@
 extends Control
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://UI/Options.tscn")
 
 
 func _on_exit_quit_pressed() -> void:
