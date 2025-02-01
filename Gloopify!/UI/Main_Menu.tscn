@@ -33,6 +33,15 @@ offset_bottom = 783.0
 theme_override_font_sizes/font_size = 50
 text = "Exit"
 
+[node name="Cupcakes" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1450.0
+offset_top = 943.0
+offset_right = 1875.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 50
+text = "Cupcakes"
+
 [node name="Options" type="Button" parent="."]
 layout_mode = 2
 offset_left = 786.0
@@ -53,4 +62,5 @@ text = "Gloopify! (Name WIP)"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit_Quit" to="." method="_on_exit_quit_pressed"]
+[connection signal="pressed" from="Cupcakes" to="." method="_on_cupcakes_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
