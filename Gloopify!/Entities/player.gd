@@ -58,7 +58,6 @@ func _physics_process(delta: float) -> void:
 		current_directionY = -1
 		
 	if Input.is_action_just_pressed("dash") and canDash:
-		print("Dashing!")
 		dashing = true
 		dash_start = true
 		dash_count -= 1
