@@ -1,0 +1,148 @@
+[gd_scene load_steps=3 format=3 uid="uid://cubah1xbx1sx1"]
+
+[ext_resource type="Script" path="res://Collection/collection.gd" id="1_ei8ft"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ssqtn"]
+
+[node name="Collection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ei8ft")
+
+[node name="CollectionTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 16.0
+offset_right = 704.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 75
+text = "Collection"
+
+[node name="Cupcake1" type="Sprite2D" parent="."]
+position = Vector2(192.125, 224)
+scale = Vector2(128, 127.85)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake2" type="Sprite2D" parent="."]
+position = Vector2(512, 224)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake3" type="Sprite2D" parent="."]
+position = Vector2(832.125, 224)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake4" type="Sprite2D" parent="."]
+position = Vector2(1152.12, 224)
+scale = Vector2(128.25, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake5" type="Sprite2D" parent="."]
+position = Vector2(1472.12, 224)
+scale = Vector2(128.25, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake6" type="Sprite2D" parent="."]
+position = Vector2(192.125, 416)
+scale = Vector2(128.25, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake7" type="Sprite2D" parent="."]
+position = Vector2(512, 416)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake8" type="Sprite2D" parent="."]
+position = Vector2(832.125, 416)
+scale = Vector2(128.25, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake9" type="Sprite2D" parent="."]
+position = Vector2(1152.13, 416)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake10" type="Sprite2D" parent="."]
+position = Vector2(1472.12, 416)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake11" type="Sprite2D" parent="."]
+position = Vector2(192.125, 608)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake12" type="Sprite2D" parent="."]
+position = Vector2(512, 608)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake13" type="Sprite2D" parent="."]
+position = Vector2(832.125, 608)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake14" type="Sprite2D" parent="."]
+position = Vector2(1152.12, 608)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake15" type="Sprite2D" parent="."]
+position = Vector2(1472.13, 608)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake16" type="Sprite2D" parent="."]
+position = Vector2(192.125, 800)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake17" type="Sprite2D" parent="."]
+position = Vector2(512, 800)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake18" type="Sprite2D" parent="."]
+position = Vector2(832.125, 800)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake19" type="Sprite2D" parent="."]
+position = Vector2(1152.12, 800)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake20" type="Sprite2D" parent="."]
+position = Vector2(1472.12, 800)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake21" type="Sprite2D" parent="."]
+position = Vector2(192.125, 988)
+scale = Vector2(128, 120)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake22" type="Sprite2D" parent="."]
+position = Vector2(512, 988)
+scale = Vector2(128, 120)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake23" type="Sprite2D" parent="."]
+position = Vector2(832.125, 988)
+scale = Vector2(128, 120)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake24" type="Sprite2D" parent="."]
+position = Vector2(1152.12, 988)
+scale = Vector2(128, 120)
+texture = SubResource("PlaceholderTexture2D_ssqtn")
+
+[node name="Cupcake25" type="Sprite2D" parent="."]
+position = Vector2(1472.12, 988)
+scale = Vector2(128, 120)
+texture = SubResource("PlaceholderTexture2D_ssqtn")

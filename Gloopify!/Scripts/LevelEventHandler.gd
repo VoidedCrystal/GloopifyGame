@@ -1,6 +1,6 @@
 extends Node
 
-const LEVELS = 1
+const LEVELS = 5
 var saved_data = {}
 
 func _ready() -> void:
@@ -35,7 +35,7 @@ func complete_level(level, time, c1, c2, c3, c4, c5):
 func reset_data():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var data = {}
-	for i in range(1, LEVELS + 2):
+	for i in range(1, LEVELS + 1):
 		var levelID = "level" + str(i)
 		data[levelID] = {
 			"clear": false,
@@ -52,3 +52,18 @@ func reset_data():
 	}
 	var json_data = JSON.stringify(data)
 	save_file.store_line(json_data)
+	
+func check_cupcakes():
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var json = JSON.new()
+	var _result = json.parse(save_file.get_line())
+	var data = json.get_data()
+	var cupcakes = []
+	for i in range(1, LEVELS + 2):
+		var levelID = "level" + str(i)
+		if levelID in data:
+			for j in range(1, 6):
+				var cupcakeID = "c" + str(i)
+				if cupcakeID in data[levelID]:
+					cupcakes.append(data[levelID][cupcakeID])
+	return cupcakes
