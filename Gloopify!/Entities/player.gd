@@ -19,6 +19,11 @@ var dash_start = true
 var dashX = 0
 var dashY = 0
 
+var dying = false
+var dying2 = false
+var death_timer = 0
+const DEATH_TIME = 20
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if dashing and dashY != 0:
@@ -53,9 +58,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and is_on_wall():
 		var jumpdir = get_wall_normal()
-		print(jumpdir)
 		velocity.x = jumpdir.x * speed * 7
-		print(velocity.x)
 		velocity.y = JUMP_VELOCITY
 		
 	
@@ -96,6 +99,11 @@ func _physics_process(delta: float) -> void:
 		if dash_tick >= DASH_TIME:
 			dashing = false
 			dash_tick = 0
+	
+	if dying or dying2:
+		velocity.x = 0
+		velocity.y = 1000
+	
 	move_and_slide()
 
 	last_direction = current_direction
@@ -131,5 +139,24 @@ func _physics_process(delta: float) -> void:
 		$AnimationPlayer.play("Idle")
 	
 	if Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
+		get_node("CollisionShape2D").disabled = true
+		die()
 	
+	if dying:
+		death_timer += 1
+		get_node("Camera2D/DeathScreen").modulate.a += 1.0 / DEATH_TIME
+		if death_timer >= DEATH_TIME:
+			dying = false
+			dying2 = true
+	
+	if dying2:
+		death_timer -= 1
+		get_node("Camera2D/DeathScreen").modulate.a -= 1.0 / DEATH_TIME
+		if death_timer <= 0:
+			dying2 = false
+			get_node("Camera2D/DeathScreen").hide()
+			get_tree().reload_current_scene()
+
+func die():
+	get_node("Camera2D/DeathScreen").show()
+	dying = true
