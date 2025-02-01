@@ -33,6 +33,9 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$AnimationPlayer.play("Jump")
+		
+		
 		
 	
 
@@ -54,11 +57,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = jumpdir.x * speed * 7
 		print(velocity.x)
 		velocity.y = JUMP_VELOCITY
+		
 	
 	if Input.is_action_pressed("move-left"):
 		current_direction = -1
+		get_node("AnimatedSprite2D").flip_h = true
 	if Input.is_action_pressed("move-right"):
 		current_direction = 1
+		get_node("AnimatedSprite2D").flip_h = false
+		
 	
 	var directionY := Input.get_axis("move-up", "move-down")
 	if !directionY:
@@ -74,6 +81,7 @@ func _physics_process(delta: float) -> void:
 		dash_start = true
 		dash_count -= 1
 		canDash = false
+		$AnimationPlayer.play("Dash")
 		
 	#increase speed if necessary
 	if current_direction == last_direction and speed < MAX_SPEED and is_on_floor():
@@ -98,6 +106,29 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		dash_count = 1
 		canDash = true
+		
+	
+	if is_on_wall():
+		var jumpdir = get_wall_normal()
+		$AnimationPlayer.play("Climb")
+		
+		$AnimatedSprite2D.offset.x = 5 * jumpdir.x * -1
+		if jumpdir.x == -1:
+			get_node("AnimatedSprite2D").flip_h = false
+		else:
+			get_node("AnimatedSprite2D").flip_h = true		
+	else:
+		$AnimatedSprite2D.offset.x = 0
+		
+	if velocity.y > 0 and not is_on_wall() and dashing == false:
+		$AnimationPlayer.play("Fall")
+		
+	
+	if dashing == false and velocity.x != 0 and $AnimationPlayer.current_animation != "Jump" and is_on_floor() and not is_on_wall():
+		$AnimationPlayer.play("Run")
+	
+	if velocity.x == 0 and velocity.y == 0 and is_on_floor():
+		$AnimationPlayer.play("Idle")
 	
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
