@@ -66,6 +66,7 @@ text = "Reset data"
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 visibility_layer = 4
+layout_mode = 0
 offset_left = 368.0
 offset_top = 176.0
 offset_right = 1552.0
@@ -99,6 +100,7 @@ theme_override_font_sizes/font_size = 35
 text = "Do you really want to delete all saved data?"
 
 [node name="Yes" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 440.0
 offset_top = 320.0
 offset_right = 752.0
@@ -107,6 +109,7 @@ theme_override_font_sizes/font_size = 33
 text = "Yes, delete data."
 
 [node name="No" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 440.0
 offset_top = 456.0
 offset_right = 752.0
