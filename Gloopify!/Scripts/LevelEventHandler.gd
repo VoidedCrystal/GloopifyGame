@@ -5,9 +5,28 @@ var saved_data = {}
 
 func _ready() -> void:
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
-	var json = JSON.new()
-	var _result = json.parse(save_file.get_line())
-	saved_data = json.get_data()
+	if save_file:
+		var json = JSON.new()
+		var _result = json.parse(save_file.get_line())
+		saved_data = json.get_data()
+	else:
+		initialize_save_file()
+		
+func initialize_save_file():
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var data = {
+		"level1": {
+			"clear": true,
+			"record": -1,
+			"c1": false,
+			"c2": false,
+			"c3": false, 
+			"c4": false,
+			"c5": false
+		}
+	}
+	var json_data = JSON.stringify(data)
+	save_file.store_line(json_data)
 	
 func complete_level(level, time, c1, c2, c3, c4, c5):
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
