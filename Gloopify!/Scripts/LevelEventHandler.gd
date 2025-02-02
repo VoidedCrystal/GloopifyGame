@@ -86,3 +86,17 @@ func check_cupcakes():
 				if cupcakeID in data[levelID]:
 					cupcakes.append(data[levelID][cupcakeID])
 	return cupcakes
+
+func check_cupcakes_in_level(level):
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var json = JSON.new()
+	var _result = json.parse(save_file.get_line())
+	var data = json.get_data()
+	var cupcakes = []
+	var levelID = "level" + str(level)
+	if levelID in data:
+		for j in range(1, 6):
+			var cupcakeID = "c" + str(j)
+			if cupcakeID in data[levelID]:
+				cupcakes.append(data[levelID][cupcakeID])
+	return cupcakes

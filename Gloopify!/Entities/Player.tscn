@@ -1,15 +1,17 @@
-[gd_scene load_steps=41 format=3 uid="uid://cs7fisp5q02se"]
+[gd_scene load_steps=48 format=3 uid="uid://cs7fisp5q02se"]
 
 [ext_resource type="Script" path="res://Entities/player.gd" id="1_njyop"]
 [ext_resource type="PackedScene" uid="uid://cdqc43axjnpsd" path="res://UI/pause_menu.tscn" id="2_0o4a1"]
-[ext_resource type="Texture2D" uid="uid://fc4w7o4wkugi" path="res://Assets/ClimbingJess.png" id="2_remy1"]
+[ext_resource type="Texture2D" uid="uid://bd58dr6js04fg" path="res://Assets/NewAndImproved.png" id="2_bpp7n"]
 [ext_resource type="Texture2D" uid="uid://icr073jw6gts" path="res://Assets/CrouchSheet.png" id="2_xe8kr"]
 [ext_resource type="Texture2D" uid="uid://dqr45pujo1y7g" path="res://Assets/JessSheetIRDJ.png" id="3_iyt0h"]
+[ext_resource type="Texture2D" uid="uid://c02oc5acu3lc4" path="res://Assets/DanceSheet.png" id="4_b24no"]
 [ext_resource type="Texture2D" uid="uid://hmythqbvnjxo" path="res://Assets/FallingSheet.png" id="5_8xuel"]
 [ext_resource type="Script" path="res://Entities/camera_2d.gd" id="6_rasan"]
+[ext_resource type="AudioStream" uid="uid://c1uvgjopvik85" path="res://Assets/Audio/death-sound.mp3" id="9_l5hqx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rivij"]
-atlas = ExtResource("2_remy1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfo2g"]
+atlas = ExtResource("2_bpp7n")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecgr2"]
@@ -23,6 +25,22 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygg1k"]
 atlas = ExtResource("2_xe8kr")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r81tb"]
+atlas = ExtResource("4_b24no")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsnd4"]
+atlas = ExtResource("4_b24no")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo7wc"]
+atlas = ExtResource("4_b24no")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spnn2"]
+atlas = ExtResource("4_b24no")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jkmd6"]
 atlas = ExtResource("3_iyt0h")
@@ -100,7 +118,7 @@ region = Rect2(96, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rivij")
+"texture": SubResource("AtlasTexture_mfo2g")
 }],
 "loop": false,
 "name": &"Climb",
@@ -118,6 +136,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r81tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsnd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo7wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spnn2")
+}],
+"loop": true,
+"name": &"Dance",
 "speed": 5.0
 }, {
 "frames": [{
@@ -259,6 +294,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_mlygi"]
+resource_name = "Dance"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Dance"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_1hqit"]
@@ -435,6 +499,7 @@ tracks/1/keys = {
 _data = {
 "Climb": SubResource("Animation_tim0i"),
 "Crouch": SubResource("Animation_ig0jd"),
+"Dance": SubResource("Animation_mlygi"),
 "Dash": SubResource("Animation_1hqit"),
 "Fall": SubResource("Animation_wl6vp"),
 "Idle": SubResource("Animation_o5efm"),
@@ -497,3 +562,12 @@ libraries = {
 "": SubResource("AnimationLibrary_57iwb")
 }
 autoplay = "Idle"
+
+[node name="DanceTimer" type="Timer" parent="."]
+wait_time = 7.5
+one_shot = true
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_l5hqx")
+
+[connection signal="timeout" from="DanceTimer" to="." method="_on_dance_timer_timeout"]
