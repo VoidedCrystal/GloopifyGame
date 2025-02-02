@@ -29,6 +29,7 @@ func initialize_save_file():
 	save_file.store_line(json_data)
 	
 func complete_level(level, time, c1, c2, c3, c4, c5):
+	print(time)
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var data = saved_data
 	var levelID = "level" + str(level)
@@ -37,7 +38,9 @@ func complete_level(level, time, c1, c2, c3, c4, c5):
 		if levelID in data:
 			record = data[levelID]["record"]
 	if record:
-		if record > time:
+		if record > time and record > 0:
+			record = time
+		elif record < 0:
 			record = time
 	data[levelID] = {
 		"clear": true,
@@ -65,10 +68,6 @@ func reset_data():
 			"c4": false,
 			"c5": false
 		}
-	data["PlayerStats"] = {
-		"coins": 0
-		#Add other lines here as upgrades unlock
-	}
 	var json_data = JSON.stringify(data)
 	save_file.store_line(json_data)
 	
@@ -100,3 +99,39 @@ func check_cupcakes_in_level(level):
 			if cupcakeID in data[levelID]:
 				cupcakes.append(data[levelID][cupcakeID])
 	return cupcakes
+
+func unlock_levels():
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var json = JSON.new()
+	var _result = json.parse(save_file.get_line())
+	var data = json.get_data()
+	if "level4" in data:
+		if "clear" in data["level4"]:
+			if data["level4"]["clear"] == true:
+				return 5
+	if "level3" in data:
+		if "clear" in data["level3"]:
+			if data["level3"]["clear"] == true:
+				return 4
+	if "level2" in data:
+		if "clear" in data["level2"]:
+			if data["level2"]["clear"] == true:
+				return 3
+	if "level1" in data:
+		if "clear" in data["level1"]:
+			if data["level1"]["clear"] == true:
+				return 2
+	return 1
+
+func get_record_time(level):
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var json = JSON.new()
+	var _result = json.parse(save_file.get_line())
+	var data = json.get_data()
+	var levelID = "level" + str(level)
+	if levelID in data:
+		if "clear" in data[levelID]:
+			if data[levelID]["clear"] == true and "record" in data[levelID]:
+				if data[levelID]["record"] > 0:
+					return data[levelID]["record"]
+	return
