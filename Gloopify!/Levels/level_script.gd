@@ -18,21 +18,22 @@ var c5 = false
 func _ready() -> void:
 	timer.start()
 	var cupcakes = handler.check_cupcakes_in_level(LEVELID)
-	if cupcakes[0]:
-		c1 = true
-		$Cupcake1/AnimatedSprite2D.modulate.a = 0.3
-	if cupcakes[1]:
-		c2 = true
-		$Cupcake2/AnimatedSprite2D.modulate.a = 0.3
-	if cupcakes[2]:
-		$Cupcake3/AnimatedSprite2D.modulate.a = 0.3
-		c3 = true
-	if cupcakes[3]:
-		$Cupcake4/AnimatedSprite2D.modulate.a = 0.3
-		c4 = true
-	if cupcakes[4]:
-		$Cupcake5/AnimatedSprite2D.modulate.a = 0.3
-		c5 = true
+	if cupcakes:
+		if cupcakes[0]:
+			c1 = true
+			$Cupcake1/AnimatedSprite2D.modulate.a = 0.3
+		if cupcakes[1]:
+			c2 = true
+			$Cupcake2/AnimatedSprite2D.modulate.a = 0.3
+		if cupcakes[2]:
+			$Cupcake3/AnimatedSprite2D.modulate.a = 0.3
+			c3 = true
+		if cupcakes[3]:
+			$Cupcake4/AnimatedSprite2D.modulate.a = 0.3
+			c4 = true
+		if cupcakes[4]:
+			$Cupcake5/AnimatedSprite2D.modulate.a = 0.3
+			c5 = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

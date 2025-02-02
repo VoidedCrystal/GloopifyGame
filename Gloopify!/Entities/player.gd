@@ -165,7 +165,8 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	get_node("Camera2D/DeathScreen").show()
-	get_node("../AudioStreamPlayer").stop()
+	if get_node("../AudioStreamPlayer"):
+		get_node("../AudioStreamPlayer").stop()
 	$DeathSound.play()
 	dying = true
 

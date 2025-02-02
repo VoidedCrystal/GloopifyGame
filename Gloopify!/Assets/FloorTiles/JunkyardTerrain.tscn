@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvjx26tk1t07y"]
+
+[ext_resource type="TileSet" uid="uid://p60rurohvwr" path="res://junk_tileset.tres" id="1_me28e"]
+
+[node name="JunkyardTerrain" type="TileMapLayer"]
+tile_set = ExtResource("1_me28e")

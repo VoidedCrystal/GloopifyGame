@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://p60rurohvwr"]
+
+[ext_resource type="Texture2D" uid="uid://cwlsa8k176jsk" path="res://Assets/FloorTiles/Junktile.png" id="1_vpkbn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b5auo"]
+texture = ExtResource("1_vpkbn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_b5auo")
