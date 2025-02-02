@@ -205,17 +205,17 @@ position = Vector2(1856, 88)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_fv1df")
 
-[node name="LowerBG" type="ColorRect" parent="ParallaxBackground/ParallaxLayer5"]
-offset_left = -147.85
+[node name="LowerBG" type="ColorRect" parent="."]
+offset_left = -144.0
 offset_top = 312.0
-offset_right = 7961.15
+offset_right = 7965.0
 offset_bottom = 416.0
 color = Color(0, 0.27451, 0.054902, 1)
 
-[node name="UpperBG" type="ColorRect" parent="ParallaxBackground/ParallaxLayer5"]
-offset_left = -147.85
+[node name="UpperBG" type="ColorRect" parent="."]
+offset_left = -144.0
 offset_top = -2160.0
-offset_right = 7971.15
+offset_right = 7975.0
 offset_bottom = -136.0
 color = Color(0, 0, 0, 1)
 

@@ -45,16 +45,15 @@ next_level_left = NodePath("../LevelSet2")
 [node name="LevelSet4" parent="." node_paths=PackedStringArray("next_level_right", "next_level_left") instance=ExtResource("2_i5jtr")]
 visible = false
 level_name = "4"
-next_scene_path = "res://Levels/Level4.tscn"
 level_art = ExtResource("8_vxuar")
 level_art_grey = ExtResource("9_ak7ry")
+next_scene_path = "res://Levels/Level4.tscn"
 next_level_right = NodePath("../LevelSet5")
 next_level_left = NodePath("../LevelSet3")
 
 [node name="LevelSet5" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("2_i5jtr")]
 visible = false
 level_name = "5"
-level_art = null
 next_level_left = NodePath("../LevelSet4")
 
 [node name="Label" type="Label" parent="."]
