@@ -27,7 +27,7 @@ func _ready() -> void:
 	elif level_name == "4":
 		$Label2.text = "As the source of her dash power, pastries naturally attract Jessica. One fateful day, she felt the distinct aura of a cupcake coming from a nearby laboratory full of dangerous traps and obstacles. All that mattered to Jessica, though, was the bakery at the other end of the lab."
 	elif level_name == "5":
-		$Label2.text = ""
+		$Label2.text = "After escaping the lab, Jessica finds herself running across the rooftops to escape the clutches of the killer robots. They're a formidable bunch to be sure, but high-speed chases are exactly where Jessica thrives."
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
