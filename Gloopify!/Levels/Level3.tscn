@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://lc2fwhi40mb2"]
+[gd_scene load_steps=35 format=4 uid="uid://lc2fwhi40mb2"]
 
 [ext_resource type="Script" path="res://Levels/level_script.gd" id="1_2sfrh"]
 [ext_resource type="Texture2D" uid="uid://cp655okg8oo7o" path="res://Assets/BackgroundCity.png" id="1_cv5ot"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cfo035kfd7q6" path="res://Entities/cupcakeYellow.tscn" id="6_7efwg"]
 [ext_resource type="PackedScene" uid="uid://c5etif5ubtq03" path="res://Entities/bakery.tscn" id="6_xq2dl"]
 [ext_resource type="AudioStream" uid="uid://tpx6qxruu4pu" path="res://Assets/Audio/Level-song.mp3" id="7_k7r5r"]
+[ext_resource type="Texture2D" uid="uid://du1x53ie13rrg" path="res://Assets/PitfallRealTop.png" id="8_wfjmd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c6ni"]
 size = Vector2(96, 1269)
@@ -434,6 +435,51 @@ ID = 5
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_k7r5r")
 autoplay = true
+
+[node name="Pitfall1" type="Sprite2D" parent="."]
+position = Vector2(896, 353)
+scale = Vector2(2, 4.0625)
+texture = ExtResource("8_wfjmd")
+
+[node name="Pitfall2" type="Sprite2D" parent="."]
+position = Vector2(1056, 352)
+scale = Vector2(2, 4.0625)
+texture = ExtResource("8_wfjmd")
+
+[node name="Pitfall3" type="Sprite2D" parent="."]
+position = Vector2(1536, 352)
+scale = Vector2(2, 4.0625)
+texture = ExtResource("8_wfjmd")
+
+[node name="Pitfall4" type="Sprite2D" parent="."]
+position = Vector2(1712, 352)
+scale = Vector2(3, 4.0625)
+texture = ExtResource("8_wfjmd")
+
+[node name="Pitfall5" type="Sprite2D" parent="."]
+position = Vector2(2272, 352)
+scale = Vector2(14, 4.0625)
+texture = ExtResource("8_wfjmd")
+
+[node name="Pitfall6" type="Sprite2D" parent="."]
+position = Vector2(2784, 352)
+scale = Vector2(4, 4.0625)
+texture = ExtResource("8_wfjmd")
+
+[node name="Pitfall7" type="Sprite2D" parent="."]
+position = Vector2(4944, 352)
+scale = Vector2(2.99999, 4.0625)
+texture = ExtResource("8_wfjmd")
+
+[node name="Pitfall8" type="Sprite2D" parent="."]
+position = Vector2(6784, 352)
+scale = Vector2(4.00001, 4.0625)
+texture = ExtResource("8_wfjmd")
+
+[node name="Pitfall9" type="Sprite2D" parent="."]
+position = Vector2(10776, 352)
+scale = Vector2(241.5, 4.0625)
+texture = ExtResource("8_wfjmd")
 
 [node name="Player" parent="." instance=ExtResource("3_2me7y")]
 position = Vector2(240, 160)
