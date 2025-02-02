@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://7pqqe1y6kyax"]
+[gd_scene load_steps=14 format=3 uid="uid://7pqqe1y6kyax"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_a1617"]
+[ext_resource type="Texture2D" uid="uid://ca4j1ve5iuida" path="res://Assets/UI/PlayButton.png" id="2_lm6ow"]
 [ext_resource type="AudioStream" uid="uid://dn5e36xpqwnfq" path="res://Assets/Audio/Main-menu-2.mp3" id="2_ul32s"]
+[ext_resource type="Texture2D" uid="uid://dyophyehgv6g" path="res://Assets/UI/TitleCard.png" id="2_yg62o"]
+[ext_resource type="Texture2D" uid="uid://kgoy4e5rg7wm" path="res://Assets/UI/CreditsButton.png" id="3_y6l4a"]
+[ext_resource type="Texture2D" uid="uid://djn4f825v1avg" path="res://Assets/UI/HoverButtons/PlayButtonWhite.png" id="4_1fox8"]
+[ext_resource type="Texture2D" uid="uid://biy6wbtq6473t" path="res://Assets/UI/SetttingsButton.png" id="4_1lo7s"]
+[ext_resource type="Texture2D" uid="uid://db3aurv44fuy4" path="res://Assets/UI/QuitButton.png" id="5_cf6hf"]
+[ext_resource type="Texture2D" uid="uid://bkbvqq2t03vvm" path="res://Assets/UI/HoverButtons/QuitButtonWhite.png" id="6_3rurx"]
+[ext_resource type="Texture2D" uid="uid://vnidnyboflso" path="res://Assets/UI/HoverButtons/CreditsButtonWhite.png" id="6_u28b1"]
+[ext_resource type="Texture2D" uid="uid://cip81wr75cws8" path="res://Assets/UI/Peak.png" id="7_j8x1y"]
+[ext_resource type="Texture2D" uid="uid://box5vf5v20mmo" path="res://Assets/UI/HoverButtons/PeakWhite.png" id="8_uqs2i"]
+[ext_resource type="Texture2D" uid="uid://dqqqqbtu0ace3" path="res://Assets/UI/HoverButtons/SetttingsButtonWhite.png" id="9_bav1f"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -16,59 +27,61 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a1617")
 
-[node name="Play" type="Button" parent="."]
-layout_mode = 2
-offset_left = 778.0
-offset_top = 343.0
-offset_right = 1217.0
-offset_bottom = 447.0
-theme_override_font_sizes/font_size = 50
-text = "Play"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(986, 543)
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("2_yg62o")
 
-[node name="Exit_Quit" type="Button" parent="."]
+[node name="Play" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 786.0
-offset_top = 727.0
-offset_right = 1211.0
-offset_bottom = 831.0
-theme_override_font_sizes/font_size = 50
-text = "Exit"
+offset_left = 834.0
+offset_top = 287.0
+offset_right = 898.0
+offset_bottom = 319.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("2_lm6ow")
+texture_hover = ExtResource("4_1fox8")
 
-[node name="Credits" type="Button" parent="."]
+[node name="Exit_Quit" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 786.0
-offset_top = 599.0
-offset_right = 1211.0
-offset_bottom = 703.0
-theme_override_font_sizes/font_size = 50
-text = "Credits"
+offset_left = 834.0
+offset_top = 799.0
+offset_right = 1259.0
+offset_bottom = 903.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("5_cf6hf")
+texture_hover = ExtResource("6_3rurx")
 
-[node name="Cupcakes" type="Button" parent="."]
+[node name="Credits" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 1450.0
-offset_top = 943.0
-offset_right = 1875.0
-offset_bottom = 1047.0
-theme_override_font_sizes/font_size = 50
-text = "Cupcakes"
+offset_left = 834.0
+offset_top = 631.0
+offset_right = 900.0
+offset_bottom = 663.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("3_y6l4a")
+texture_hover = ExtResource("6_u28b1")
 
-[node name="Options" type="Button" parent="."]
+[node name="Cupcakes" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 786.0
-offset_top = 470.0
-offset_right = 1211.0
-offset_bottom = 575.0
-theme_override_font_sizes/font_size = 50
-text = "Options"
+offset_left = 1562.0
+offset_top = 895.0
+offset_right = 1626.0
+offset_bottom = 927.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("7_j8x1y")
+texture_hover = ExtResource("8_uqs2i")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 634.0
-offset_top = 191.0
-offset_right = 1400.0
-offset_bottom = 294.0
-theme_override_font_sizes/font_size = 75
-text = "Gloopify! (Name WIP)"
+[node name="Options" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 834.0
+offset_top = 463.0
+offset_right = 898.0
+offset_bottom = 495.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("4_1lo7s")
+texture_hover = ExtResource("9_bav1f")
 
 [node name="Main Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ul32s")
