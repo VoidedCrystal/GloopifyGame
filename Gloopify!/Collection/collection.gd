@@ -10,7 +10,6 @@ func _ready() -> void:
 	cupcakeArray = handler.check_cupcakes()
 	while cupcakeArray.size() < 25:
 		cupcakeArray.append(false)
-	print(cupcakeArray)
 	for i in range(1, cupcakeArray.size() + 1):
 		var cupcakeID = "Cupcake" + str(i)
 		var cake = get_node("" + cupcakeID)
@@ -23,6 +22,9 @@ func _ready() -> void:
 func color_cake(cake):
 	cake.animation = "Unlock"
 
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_pressed("pause"):
+		get_tree().change_scene_to_file("res://UI/Main_Menu.tscn")
 
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/Main_Menu.tscn")
