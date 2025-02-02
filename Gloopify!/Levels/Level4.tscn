@@ -1,0 +1,398 @@
+[gd_scene load_steps=26 format=4 uid="uid://cl2f1qw1pt3rt"]
+
+[ext_resource type="Script" path="res://Levels/level_script.gd" id="1_ty36n"]
+[ext_resource type="Texture2D" uid="uid://cp655okg8oo7o" path="res://Assets/BackgroundCity.png" id="2_fv1df"]
+[ext_resource type="Texture2D" uid="uid://bjlluca3ddsla" path="res://Assets/FloorTiles/labTiles.png" id="3_2wh8o"]
+[ext_resource type="PackedScene" path="res://Assets/FloorTiles/Spike.tscn" id="4_bjhey"]
+[ext_resource type="Texture2D" uid="uid://du1x53ie13rrg" path="res://Assets/PitfallRealTop.png" id="5_f0ek5"]
+[ext_resource type="PackedScene" uid="uid://blcmksmvuq4nr" path="res://Entities/cupcakeOrange.tscn" id="6_jryro"]
+[ext_resource type="Texture2D" uid="uid://7ci5fwr3rtfl" path="res://Assets/spritesheet.png" id="7_t3o46"]
+[ext_resource type="PackedScene" uid="uid://cs7fisp5q02se" path="res://Entities/Player.tscn" id="8_tj146"]
+[ext_resource type="AudioStream" uid="uid://tpx6qxruu4pu" path="res://Assets/Audio/Level-song.mp3" id="9_ce4sb"]
+[ext_resource type="PackedScene" uid="uid://b6cdv6i47lhic" path="res://Entities/bakery.tscn" id="9_em4la"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p626f"]
+texture = ExtResource("3_2wh8o")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ubmhc"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_p626f")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72lba"]
+atlas = ExtResource("7_t3o46")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoa3o"]
+atlas = ExtResource("7_t3o46")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mfn6"]
+atlas = ExtResource("7_t3o46")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05heh"]
+atlas = ExtResource("7_t3o46")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aalwc"]
+atlas = ExtResource("7_t3o46")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6qds"]
+atlas = ExtResource("7_t3o46")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bigup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72lba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoa3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mfn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05heh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aalwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6qds")
+}],
+"loop": true,
+"name": &"BOOST",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_w7453"]
+resource_name = "BOOST"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"BOOST"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_8ijca"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"BOOST"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_67muo"]
+_data = {
+"BOOST": SubResource("Animation_w7453"),
+"RESET": SubResource("Animation_8ijca")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i17j"]
+size = Vector2(8812, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1e6b"]
+size = Vector2(22, 29.8125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl0lx"]
+size = Vector2(32, 14)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ty36n")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_begin = Vector2(480, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(80, 88)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_fv1df")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(3.85, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(524, 88)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_fv1df")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(3.85, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(968, 88)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_fv1df")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(3.85, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="CorrinFromHitGameFireEmblemFates" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1412, 88)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_fv1df")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(3.85, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="DoryFromHitGameKingdomHearts" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(1856, 88)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_fv1df")
+
+[node name="LowerBG" type="ColorRect" parent="ParallaxBackground/ParallaxLayer5"]
+offset_left = -147.85
+offset_top = 312.0
+offset_right = 7961.15
+offset_bottom = 416.0
+color = Color(0, 0.27451, 0.054902, 1)
+
+[node name="UpperBG" type="ColorRect" parent="ParallaxBackground/ParallaxLayer5"]
+offset_left = -147.85
+offset_top = -2160.0
+offset_right = 7971.15
+offset_bottom = -136.0
+color = Color(0, 0, 0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, -160)
+tile_map_data = PackedByteArray("AAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAAAAAoAAQABAAAAAAABAAoAAQAAAAEAAAACAAoAAQABAAAAAAADAAoAAQABAAAAAAAEAAoAAQABAAAAAAAFAAoAAQABAAAAAAAGAAoAAQABAAAAAAAGAAsAAQABAAAAAAAFAAsAAQABAAAAAAAEAAsAAQAAAAEAAAADAAsAAQABAAAAAAACAAsAAQABAAAAAAABAAsAAQABAAAAAAAAAAsAAQABAAAAAAAKAAoAAQABAAAAAAALAAoAAQABAAAAAAAMAAoAAQABAAAAAAAMAAsAAQAAAAEAAAALAAsAAQABAAAAAAAKAAsAAQABAAAAAAANAAkAAQABAAAAAAANAAgAAQABAAAAAAANAAcAAQABAAAAAAANAAoAAQABAAAAAAANAAsAAQABAAAAAAAOAAsAAQABAAAAAAAOAAoAAQABAAAAAAAOAAkAAQABAAAAAAAOAAgAAQABAAAAAAAOAAcAAQAAAAEAAAAOAAYAAQABAAAAAAAOAAUAAQAAAAAAAAANAAUAAQAAAAAAAAANAAYAAQABAAAAAAATAAkAAQAAAAAAAAAUAAkAAQAAAAAAAAAVAAkAAQAAAAAAAAAWAAkAAQAAAAAAAAAXAAkAAQAAAAAAAAAYAAkAAQAAAAAAAAAZAAkAAQAAAAAAAAATAAoAAQABAAAAAAAUAAoAAQABAAAAAAAVAAoAAQABAAAAAAAWAAoAAQABAAAAAAAXAAoAAQABAAAAAAAYAAoAAQAAAAEAAAAZAAoAAQABAAAAAAAZAAsAAQABAAAAAAAYAAsAAQABAAAAAAAXAAsAAQABAAAAAAAWAAsAAQABAAAAAAAVAAsAAQAAAAEAAAAUAAsAAQABAAAAAAATAAsAAQABAAAAAAAdAAkAAQAAAAAAAAAeAAkAAQAAAAAAAAAfAAkAAQAAAAAAAAAgAAkAAQAAAAAAAAAhAAkAAQABAAAAAAAdAAoAAQABAAAAAAAeAAoAAQAAAAEAAAAfAAoAAQABAAAAAAAgAAoAAQABAAAAAAAhAAoAAQABAAAAAAAhAAsAAQAAAAEAAAAgAAsAAQABAAAAAAAfAAsAAQABAAAAAAAeAAsAAQABAAAAAAAdAAsAAQABAAAAAAAVAA4AAQAAAAAAAAAWAA4AAQAAAAAAAAAXAA4AAQAAAAAAAAAYAA4AAQAAAAAAAAAZAA4AAQAAAAAAAAAaAA4AAQAAAAAAAAAbAA4AAQAAAAAAAAAhAAgAAQAAAAAAAAAlAAkAAQAAAAAAAAAmAAkAAQAAAAAAAAAnAAkAAQAAAAAAAAAoAAkAAQAAAAAAAAApAAkAAQAAAAAAAAAuAAkAAQAAAAAAAAAvAAkAAQAAAAAAAAAwAAkAAQAAAAAAAAAxAAkAAQAAAAAAAAAlAAoAAQABAAAAAAAmAAoAAQABAAAAAAAnAAoAAQABAAAAAAAoAAoAAQABAAAAAAApAAoAAQAAAAEAAAApAAsAAQABAAAAAAAoAAsAAQABAAAAAAAnAAsAAQABAAAAAAAmAAsAAQAAAAEAAAAlAAsAAQABAAAAAAAuAAoAAQABAAAAAAAvAAoAAQABAAAAAAAwAAoAAQABAAAAAAAxAAoAAQAAAAEAAAAwAAsAAQABAAAAAAAvAAsAAQABAAAAAAAuAAsAAQAAAAEAAAAxAAsAAQABAAAAAAA2AAkAAQABAAAAAAA2AAoAAQABAAAAAAA2AAUAAQABAAAAAAA2AAQAAQABAAAAAAA6AAsAAQAAAAAAAAA7AAsAAQAAAAAAAAA8AAsAAQAAAAAAAAA9AAsAAQAAAAAAAAA+AAsAAQAAAAAAAAA/AAsAAQABAAAAAAA/AAoAAQABAAAAAAA/AAkAAQABAAAAAAA/AAgAAQABAAAAAAA/AAcAAQAAAAEAAAA/AAwAAQABAAAAAAA+AAwAAQABAAAAAAA9AAwAAQABAAAAAAA8AAwAAQABAAAAAAA7AAwAAQABAAAAAAA6AAwAAQABAAAAAAA/AAYAAQABAAAAAAA/AAUAAQAAAAAAAABEAAUAAQAAAAAAAABEAAYAAQABAAAAAABEAAcAAQABAAAAAABEAAgAAQABAAAAAABEAAkAAQAAAAEAAABEAAoAAQABAAAAAABEAAsAAQABAAAAAABFAAsAAQABAAAAAABFAAoAAQABAAAAAABFAAkAAQABAAAAAABFAAgAAQABAAAAAABFAAcAAQABAAAAAABFAAYAAQAAAAEAAABFAAUAAQAAAAAAAABKAAUAAQAAAAAAAABKAAYAAQABAAAAAABKAAcAAQABAAAAAABKAAgAAQABAAAAAABKAAkAAQABAAAAAABKAAoAAQABAAAAAABKAAsAAQAAAAEAAABLAAsAAQABAAAAAABLAAoAAQABAAAAAABLAAkAAQABAAAAAABLAAgAAQABAAAAAABLAAcAAQAAAAEAAABLAAYAAQABAAAAAABLAAUAAQAAAAAAAABAAAUAAQAAAAAAAABAAAYAAQABAAAAAABAAAcAAQABAAAAAABAAAgAAQABAAAAAABAAAkAAQABAAAAAABAAAoAAQAAAAEAAABAAAsAAQABAAAAAABQAAoAAQAAAAAAAABRAAoAAQAAAAAAAABSAAoAAQAAAAAAAABTAAoAAQAAAAAAAABUAAoAAQAAAAAAAABQAAsAAQABAAAAAABRAAsAAQABAAAAAABSAAsAAQAAAAEAAABTAAsAAQABAAAAAABUAAsAAQABAAAAAABUAAwAAQABAAAAAABVAAoAAQAAAAAAAABWAAoAAQAAAAAAAABXAAoAAQABAAAAAABXAAkAAQABAAAAAABXAAgAAQAAAAEAAABXAAcAAQABAAAAAABXAAYAAQABAAAAAABTAAcAAQABAAAAAABTAAYAAQABAAAAAABTAAUAAQABAAAAAABTAAQAAQABAAAAAABTAAMAAQABAAAAAABTAAIAAQABAAAAAABSAAIAAQABAAAAAABSAAMAAQAAAAEAAABSAAQAAQABAAAAAABSAAUAAQAAAAEAAABSAAYAAQABAAAAAABSAAcAAQABAAAAAABYAAoAAQABAAAAAABYAAkAAQABAAAAAABYAAgAAQABAAAAAABYAAcAAQABAAAAAABYAAYAAQABAAAAAABVAAsAAQABAAAAAABWAAsAAQABAAAAAABXAAsAAQABAAAAAABYAAsAAQABAAAAAABUAAcAAQAAAAAAAABWAAQAAQAAAAAAAABXAAUAAQABAAAAAABXAAQAAQABAAAAAABXAAMAAQABAAAAAABXAAIAAQABAAAAAABXAAEAAQABAAAAAABYAAEAAQAAAAEAAABYAAIAAQABAAAAAABYAAMAAQABAAAAAABYAAQAAQABAAAAAABYAAUAAQABAAAAAABTAAEAAQAAAAEAAABSAAEAAQABAAAAAABUAAEAAQAAAAAAAABOAPr/AQAAAAAAAABOAPv/AQABAAAAAABPAPr/AQAAAAAAAABPAPv/AQABAAAAAABQAPr/AQAAAAAAAABQAPv/AQAAAAEAAABSAPr/AQAAAAAAAABSAPv/AQABAAAAAABTAPr/AQAAAAAAAABTAPv/AQABAAAAAABXAPr/AQAAAAAAAABXAPv/AQABAAAAAABYAPr/AQAAAAAAAABYAPv/AQABAAAAAABZAPr/AQAAAAAAAABZAPv/AQABAAAAAABaAPr/AQAAAAAAAABaAPv/AQAAAAEAAABbAPr/AQAAAAAAAABbAPv/AQABAAAAAABcAPr/AQAAAAAAAABcAPv/AQABAAAAAABdAPr/AQAAAAAAAABdAPv/AQABAAAAAABeAPr/AQAAAAAAAABeAPv/AQABAAAAAABfAPr/AQAAAAAAAABfAPv/AQABAAAAAABgAPr/AQAAAAAAAABgAPv/AQABAAAAAABhAPr/AQAAAAAAAABhAPv/AQAAAAEAAABSAAAAAQABAAAAAABSAP//AQABAAAAAABSAP7/AQABAAAAAABSAP3/AQAAAAEAAABSAPz/AQABAAAAAABTAPz/AQABAAAAAABTAP3/AQABAAAAAABTAP7/AQABAAAAAABTAP//AQABAAAAAABTAAAAAQABAAAAAABXAAAAAQABAAAAAABXAP//AQABAAAAAABXAP3/AQABAAAAAABXAPz/AQABAAAAAABYAPz/AQABAAAAAABYAP3/AQABAAAAAABYAP7/AQABAAAAAABYAP//AQABAAAAAABYAAAAAQABAAAAAABZAPz/AQABAAAAAABaAPz/AQABAAAAAABbAPz/AQABAAAAAABcAPz/AQABAAAAAABdAPz/AQABAAAAAABeAPz/AQABAAAAAABfAPz/AQABAAAAAABgAPz/AQABAAAAAABhAPz/AQABAAAAAABXAP7/AQAAAAEAAABnAPv/AQAAAAAAAABnAPz/AQABAAAAAABnAP3/AQABAAAAAABoAPv/AQAAAAAAAABoAPz/AQABAAAAAABoAP3/AQABAAAAAABpAPv/AQAAAAAAAABpAPz/AQABAAAAAABpAP3/AQAAAAEAAABqAPv/AQAAAAAAAABqAPz/AQABAAAAAABqAP3/AQABAAAAAABrAPv/AQAAAAAAAABrAPz/AQABAAAAAABrAP3/AQABAAAAAABsAPv/AQAAAAAAAABsAPz/AQAAAAEAAABsAP3/AQABAAAAAABtAPv/AQAAAAAAAABtAPz/AQABAAAAAABtAP3/AQABAAAAAABuAPv/AQAAAAAAAABuAPz/AQABAAAAAABuAP3/AQABAAAAAABvAPv/AQAAAAAAAABvAPz/AQABAAAAAABvAP3/AQABAAAAAABwAPv/AQAAAAAAAABwAPz/AQAAAAEAAABwAP3/AQABAAAAAABxAPv/AQAAAAAAAABxAPz/AQABAAAAAABxAP3/AQABAAAAAAByAPv/AQAAAAAAAAByAPz/AQABAAAAAAByAP3/AQABAAAAAABzAPv/AQAAAAAAAABzAPz/AQABAAAAAABzAP3/AQAAAAEAAAB0APv/AQAAAAAAAAB0APz/AQABAAAAAAB0AP3/AQABAAAAAAB1APv/AQAAAAAAAAB1APz/AQABAAAAAAB1AP3/AQABAAAAAAB2APv/AQAAAAAAAAB2APz/AQABAAAAAAB2AP3/AQABAAAAAAB3APv/AQAAAAAAAAB3APz/AQAAAAEAAAB3AP3/AQABAAAAAAB4APv/AQAAAAAAAAB4APz/AQABAAAAAAB4AP3/AQABAAAAAAB5APv/AQAAAAAAAAB5APz/AQABAAAAAAB5AP3/AQABAAAAAAB6APv/AQAAAAAAAAB6APz/AQABAAAAAAB6AP3/AQAAAAEAAAB7APv/AQAAAAAAAAB7APz/AQABAAAAAAB7AP3/AQABAAAAAAB8APv/AQAAAAAAAAB8APz/AQABAAAAAAB8AP3/AQABAAAAAAB9APv/AQAAAAAAAAB9APz/AQABAAAAAAB9AP3/AQABAAAAAAB+APv/AQAAAAAAAAB+APz/AQABAAAAAAB+AP3/AQAAAAEAAAB/APv/AQAAAAAAAAB/APz/AQABAAAAAAB/AP3/AQABAAAAAACAAPv/AQAAAAAAAACAAPz/AQABAAAAAACAAP3/AQABAAAAAACBAPv/AQAAAAAAAACBAPz/AQABAAAAAACBAP3/AQABAAAAAACCAPv/AQAAAAAAAACCAPz/AQAAAAEAAACCAP3/AQABAAAAAACDAPv/AQAAAAAAAACDAPz/AQABAAAAAACDAP3/AQABAAAAAACEAPv/AQAAAAAAAACEAPz/AQABAAAAAACEAP3/AQABAAAAAACFAPv/AQAAAAAAAACFAPz/AQABAAAAAACFAP3/AQABAAAAAACGAPv/AQAAAAAAAACGAPz/AQABAAAAAACGAP3/AQAAAAEAAACHAPn/AQABAAAAAACHAPr/AQABAAAAAACHAPv/AQABAAAAAACHAPz/AQABAAAAAACHAP3/AQABAAAAAACNAPj/AQAAAAAAAACNAPn/AQABAAAAAACSAPv/AQAAAAAAAACSAPz/AQABAAAAAACSAP3/AQABAAAAAACWAPj/AQAAAAAAAACWAPn/AQABAAAAAACWAPr/AQABAAAAAACaAPz/AQAAAAAAAACaAP3/AQABAAAAAACfAPr/AQAAAAAAAACfAPv/AQAAAAEAAACfAPz/AQABAAAAAACgAPr/AQAAAAAAAACgAPv/AQABAAAAAACgAPz/AQABAAAAAAChAPr/AQAAAAAAAAChAPv/AQABAAAAAAChAPz/AQAAAAEAAACiAPr/AQAAAAAAAACiAPv/AQABAAAAAACiAPz/AQABAAAAAAA=")
+tile_set = SubResource("TileSet_ubmhc")
+
+[node name="Spike" parent="." instance=ExtResource("4_bjhey")]
+position = Vector2(0, -160)
+tile_map_data = PackedByteArray("AAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAA=")
+
+[node name="Pitfall1" type="Sprite2D" parent="."]
+position = Vector2(332, 230)
+scale = Vector2(21.25, 5.375)
+texture = ExtResource("5_f0ek5")
+
+[node name="Pitfall2" type="Sprite2D" parent="."]
+position = Vector2(4296, 222)
+scale = Vector2(210.5, 5.875)
+texture = ExtResource("5_f0ek5")
+
+[node name="Pitfall3" type="Sprite2D" parent="."]
+position = Vector2(272, 188)
+scale = Vector2(3.125, 6.75)
+texture = ExtResource("5_f0ek5")
+
+[node name="Pitfall5" type="Sprite2D" parent="."]
+position = Vector2(944, 292)
+scale = Vector2(3.125, 1.75)
+texture = ExtResource("5_f0ek5")
+
+[node name="Pitfall4" type="Sprite2D" parent="."]
+position = Vector2(544, 192)
+scale = Vector2(4, 6.75)
+texture = ExtResource("5_f0ek5")
+
+[node name="Cupcake1" parent="." instance=ExtResource("6_jryro")]
+position = Vector2(712, 256)
+ID = 1
+
+[node name="Cupcake2" parent="." instance=ExtResource("6_jryro")]
+position = Vector2(1744, 80)
+ID = 2
+
+[node name="Cupcake3" parent="." instance=ExtResource("6_jryro")]
+position = Vector2(2544, -376)
+ID = 3
+
+[node name="Cupcake4" parent="." instance=ExtResource("6_jryro")]
+position = Vector2(3776, -352)
+ID = 4
+
+[node name="Cupcake5" parent="." instance=ExtResource("6_jryro")]
+position = Vector2(4720, -280)
+ID = 5
+
+[node name="Boost" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(2943, -361)
+scale = Vector2(1, 0.875)
+sprite_frames = SubResource("SpriteFrames_bigup")
+animation = &"BOOST"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boost"]
+libraries = {
+"": SubResource("AnimationLibrary_67muo")
+}
+autoplay = "BOOST"
+
+[node name="Boost4" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(2912, -361)
+scale = Vector2(1, 0.875)
+sprite_frames = SubResource("SpriteFrames_bigup")
+animation = &"BOOST"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boost4"]
+libraries = {
+"": SubResource("AnimationLibrary_67muo")
+}
+autoplay = "BOOST"
+
+[node name="Boost5" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(2879, -361)
+scale = Vector2(1, 0.875)
+sprite_frames = SubResource("SpriteFrames_bigup")
+animation = &"BOOST"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boost5"]
+libraries = {
+"": SubResource("AnimationLibrary_67muo")
+}
+autoplay = "BOOST"
+
+[node name="Boost2" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(2975, -361)
+scale = Vector2(1, 0.875)
+sprite_frames = SubResource("SpriteFrames_bigup")
+animation = &"BOOST"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boost2"]
+libraries = {
+"": SubResource("AnimationLibrary_67muo")
+}
+autoplay = "BOOST"
+
+[node name="Boost3" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(3007, -361)
+scale = Vector2(1, 0.875)
+sprite_frames = SubResource("SpriteFrames_bigup")
+animation = &"BOOST"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boost3"]
+libraries = {
+"": SubResource("AnimationLibrary_67muo")
+}
+autoplay = "BOOST"
+
+[node name="KillZone" type="Area2D" parent="."]
+position = Vector2(24, -56)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(3256, 424)
+shape = SubResource("RectangleShape2D_4i17j")
+debug_color = Color(0.813007, 0.0605259, 0.251844, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(656, 177.094)
+shape = SubResource("RectangleShape2D_s1e6b")
+debug_color = Color(0.813007, 0.0605259, 0.251844, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(784, 177.094)
+shape = SubResource("RectangleShape2D_s1e6b")
+debug_color = Color(0.813007, 0.0605259, 0.251844, 0.42)
+
+[node name="Bakery" parent="." instance=ExtResource("9_em4la")]
+position = Vector2(5160, -416)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 70.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ce4sb")
+autoplay = true
+
+[node name="BoostPanel" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(2942, -351)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoostPanel"]
+position = Vector2(-64, -1)
+shape = SubResource("RectangleShape2D_pl0lx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BoostPanel"]
+position = Vector2(-32, -1)
+shape = SubResource("RectangleShape2D_pl0lx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BoostPanel"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_pl0lx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BoostPanel"]
+position = Vector2(32, -1)
+shape = SubResource("RectangleShape2D_pl0lx")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="BoostPanel"]
+position = Vector2(64, -1)
+shape = SubResource("RectangleShape2D_pl0lx")
+
+[node name="Player" parent="." instance=ExtResource("8_tj146")]
+position = Vector2(48, 80)
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

@@ -1,39 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvnek7yos0kvo"]
+[gd_scene load_steps=12 format=3 uid="uid://j0xrx8ng7h54"]
 
-[ext_resource type="Script" path="res://Entities/cupcake.gd" id="1_oyuhh"]
-[ext_resource type="Texture2D" uid="uid://dntkdwtot77nq" path="res://Assets/CupcakeSprites.png" id="2_hlakw"]
-[ext_resource type="AudioStream" uid="uid://bqcwypn7tuk6i" path="res://Assets/Audio/collect_cupcake.mp3" id="3_j4ofo"]
+[ext_resource type="Script" path="res://Entities/cupcake.gd" id="1_yunad"]
+[ext_resource type="Texture2D" uid="uid://dntkdwtot77nq" path="res://Assets/CupcakeSprites.png" id="2_4o1x3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_22x1g"]
-atlas = ExtResource("2_hlakw")
-region = Rect2(0, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaino"]
+atlas = ExtResource("2_4o1x3")
+region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsm2o"]
-atlas = ExtResource("2_hlakw")
-region = Rect2(32, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a4ev"]
+atlas = ExtResource("2_4o1x3")
+region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0h3mg"]
-atlas = ExtResource("2_hlakw")
-region = Rect2(64, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm61v"]
+atlas = ExtResource("2_4o1x3")
+region = Rect2(64, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ovs0"]
-atlas = ExtResource("2_hlakw")
-region = Rect2(96, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhxcc"]
+atlas = ExtResource("2_4o1x3")
+region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kyct2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_22x1g")
+"texture": SubResource("AtlasTexture_uaino")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jsm2o")
+"texture": SubResource("AtlasTexture_7a4ev")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0h3mg")
+"texture": SubResource("AtlasTexture_wm61v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5ovs0")
+"texture": SubResource("AtlasTexture_yhxcc")
 }],
 "loop": true,
 "name": &"Float",
@@ -107,7 +106,7 @@ _data = {
 }
 
 [node name="Cupcake" type="Node2D"]
-script = ExtResource("1_oyuhh")
+script = ExtResource("1_yunad")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2.38419e-07)
@@ -125,8 +124,5 @@ libraries = {
 "": SubResource("AnimationLibrary_0hixg")
 }
 autoplay = "Float"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_j4ofo")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cp655okg8oo7o" path="res://Assets/BackgroundCity.png" id="2_00clq"]
 [ext_resource type="PackedScene" uid="uid://cs7fisp5q02se" path="res://Entities/Player.tscn" id="2_y2t8n"]
 [ext_resource type="Texture2D" uid="uid://du1x53ie13rrg" path="res://Assets/PitfallRealTop.png" id="3_7ls3x"]
-[ext_resource type="PackedScene" uid="uid://btqibvp8fpebx" path="res://Assets/FloorTiles/Spike.tscn" id="4_byad7"]
-[ext_resource type="PackedScene" uid="uid://c5etif5ubtq03" path="res://Entities/bakery.tscn" id="5_ue7d8"]
-[ext_resource type="PackedScene" uid="uid://xilk24ccme11" path="res://Entities/cupcakeRed.tscn" id="7_1v210"]
+[ext_resource type="PackedScene" path="res://Assets/FloorTiles/Spike.tscn" id="4_byad7"]
+[ext_resource type="PackedScene" uid="uid://b6cdv6i47lhic" path="res://Entities/bakery.tscn" id="5_ue7d8"]
+[ext_resource type="PackedScene" uid="uid://bvnek7yos0kvo" path="res://Entities/cupcakeRed.tscn" id="7_1v210"]
 [ext_resource type="Texture2D" uid="uid://t06snx5ei30q" path="res://Assets/ArrowSign.png" id="7_uphj1"]
 [ext_resource type="AudioStream" uid="uid://tpx6qxruu4pu" path="res://Assets/Audio/Level-song.mp3" id="8_o70fn"]
 
