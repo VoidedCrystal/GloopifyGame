@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdqc43axjnpsd"]
+[gd_scene load_steps=9 format=3 uid="uid://cdqc43axjnpsd"]
 
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_j2kof"]
+[ext_resource type="Texture2D" uid="uid://3018xfpxcvf0" path="res://Assets/UI/PausedButon.png" id="2_8nsr3"]
+[ext_resource type="Texture2D" uid="uid://db3aurv44fuy4" path="res://Assets/UI/QuitButton.png" id="2_kglrh"]
+[ext_resource type="Texture2D" uid="uid://bkbvqq2t03vvm" path="res://Assets/UI/HoverButtons/QuitButtonWhite.png" id="3_36525"]
+[ext_resource type="Texture2D" uid="uid://dyn2s00k56tq0" path="res://Assets/UI/ResumeButton.png" id="4_ghh5g"]
+[ext_resource type="Texture2D" uid="uid://dcjrxqmjd77g3" path="res://Assets/UI/Main_MenuButton.png" id="5_v06me"]
+[ext_resource type="Texture2D" uid="uid://bcqjwjspqgfti" path="res://Assets/UI/HoverButtons/ResumeButtonWhite.png" id="5_ygegn"]
+[ext_resource type="Texture2D" uid="uid://rsaraa21llxy" path="res://Assets/UI/HoverButtons/Main_MenuButtonwhite.png" id="6_p4i4i"]
 
 [node name="Pause Menu" type="Control"]
 layout_mode = 3
@@ -22,43 +29,43 @@ offset_left = -1472.0
 offset_top = -816.0
 offset_right = 3528.0
 offset_bottom = 2024.0
-color = Color(0, 0, 0, 0.529412)
+color = Color(0.369176, 0.565262, 1, 0.529412)
+metadata/_edit_group_ = true
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 672.0
-offset_right = 992.0
-offset_bottom = 736.0
-theme_override_font_sizes/font_size = 33
-text = "Quit"
+offset_left = 784.0
+offset_top = 718.0
+offset_right = 848.0
+offset_bottom = 750.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("2_kglrh")
+texture_hover = ExtResource("3_36525")
 
-[node name="Resume" type="Button" parent="."]
+[node name="Resume" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 802.0
-offset_top = 496.0
-offset_right = 994.0
-offset_bottom = 560.0
-theme_override_font_sizes/font_size = 33
-text = "Resume"
+offset_left = 784.0
+offset_top = 462.0
+offset_right = 848.0
+offset_bottom = 494.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("4_ghh5g")
+texture_hover = ExtResource("5_ygegn")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 808.0
-offset_top = 392.0
-offset_right = 1079.0
-offset_bottom = 484.0
-theme_override_font_sizes/font_size = 49
-text = "Paused"
+[node name="Label" type="Sprite2D" parent="."]
+position = Vector2(896, 382)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("2_8nsr3")
 
-[node name="Main Menu" type="Button" parent="."]
+[node name="Main Menu" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 801.0
-offset_top = 584.0
-offset_right = 993.0
-offset_bottom = 648.0
-theme_override_font_sizes/font_size = 33
-text = "Main Menu"
+offset_left = 784.0
+offset_top = 590.0
+offset_right = 848.0
+offset_bottom = 622.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("5_v06me")
+texture_hover = ExtResource("6_p4i4i")
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
