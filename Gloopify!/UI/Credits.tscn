@@ -48,8 +48,7 @@ theme_override_fonts/font = SubResource("FontVariation_wnqxj")
 theme_override_font_sizes/font_size = 50
 text = "Programmers:  Kyle Herman, Kayla Kuntscher
 Artist: Matthew Bresnahan
-Level Designer: Simon Warner
-Audio Design: Simon Warner"
+Level and Sound Designer: Simon Warner"
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 0

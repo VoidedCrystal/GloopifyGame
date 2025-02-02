@@ -24,4 +24,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			level.c4 = true
 		elif ID == 5:
 			level.c5 = true
+		if visible:
+			$AudioStreamPlayer.play()
 		hide()
+		
