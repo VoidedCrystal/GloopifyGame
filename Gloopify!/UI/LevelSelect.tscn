@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://jl75mgscvc3f"]
+[gd_scene load_steps=6 format=3 uid="uid://jl75mgscvc3f"]
 
 [ext_resource type="Script" path="res://UI/level_select.gd" id="1_la4qf"]
 [ext_resource type="PackedScene" uid="uid://bx658kweduvqk" path="res://UI/levelSet.tscn" id="2_i5jtr"]
+[ext_resource type="Texture2D" uid="uid://c0hevjguuv26m" path="res://Assets/LevelArt/Level1Art.png" id="3_c6avu"]
+[ext_resource type="Texture2D" uid="uid://bqofea4m48j60" path="res://Assets/LevelArt/Level2Art.png" id="4_bar0c"]
+[ext_resource type="Texture2D" uid="uid://bwhss72wh2e56" path="res://Assets/LevelArt/Level2ArtGrey.png" id="5_x26mn"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -13,39 +16,44 @@ grow_vertical = 2
 script = ExtResource("1_la4qf")
 
 [node name="LevelSet" parent="." node_paths=PackedStringArray("next_level_right") instance=ExtResource("2_i5jtr")]
-offset_top = 8.0
-offset_bottom = 136.0
+level_art = ExtResource("3_c6avu")
 next_scene_path = "res://Levels/Level1.tscn"
 next_level_right = NodePath("../LevelSet2")
 
 [node name="LevelSet2" parent="." node_paths=PackedStringArray("next_level_right", "next_level_left") instance=ExtResource("2_i5jtr")]
 visible = false
-offset_top = 8.0
-offset_bottom = 136.0
 level_name = "2"
+level_art = ExtResource("4_bar0c")
+level_art_grey = ExtResource("5_x26mn")
 next_scene_path = "res://Levels/Level2.tscn"
 next_level_right = NodePath("../LevelSet3")
 next_level_left = NodePath("../LevelSet")
 
 [node name="LevelSet3" parent="." node_paths=PackedStringArray("next_level_right", "next_level_left") instance=ExtResource("2_i5jtr")]
 visible = false
-offset_top = 8.0
-offset_bottom = 136.0
 level_name = "3"
+level_art = null
 next_level_right = NodePath("../LevelSet4")
 next_level_left = NodePath("../LevelSet2")
 
 [node name="LevelSet4" parent="." node_paths=PackedStringArray("next_level_right", "next_level_left") instance=ExtResource("2_i5jtr")]
 visible = false
-offset_top = 8.0
-offset_bottom = 136.0
 level_name = "4"
+level_art = null
 next_level_right = NodePath("../LevelSet5")
 next_level_left = NodePath("../LevelSet3")
 
 [node name="LevelSet5" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("2_i5jtr")]
 visible = false
-offset_top = 8.0
-offset_bottom = 136.0
 level_name = "5"
+level_art = null
 next_level_left = NodePath("../LevelSet4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1384.0
+offset_top = 1000.0
+offset_right = 1908.0
+offset_bottom = 1088.0
+theme_override_font_sizes/font_size = 50
+text = "Esc to return to menu"

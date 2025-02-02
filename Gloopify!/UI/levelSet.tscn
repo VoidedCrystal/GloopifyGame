@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx658kweduvqk"]
+[gd_scene load_steps=2 format=3 uid="uid://bx658kweduvqk"]
 
 [ext_resource type="Script" path="res://UI/levelSet.gd" id="1_ojevv"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vtmnr"]
 
 [node name="LevelSet" type="Control"]
 layout_mode = 3
@@ -10,15 +8,33 @@ anchors_preset = 0
 offset_right = 512.0
 offset_bottom = 128.0
 script = ExtResource("1_ojevv")
+level_art = ""
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="TextureRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_vtmnr")
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 600.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -28,3 +44,13 @@ offset_right = 459.0
 offset_bottom = 112.0
 theme_override_font_sizes/font_size = 70
 text = "Level 1"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 616.0
+offset_right = 488.0
+offset_bottom = 973.0
+theme_override_font_sizes/font_size = 30
+text = "Jessica is a natural daredevil, always showing off and taking risks to evade capture. It only makes sense, then, that she feels drawn to the junkyard, a place full of machinery, spikes, and most of all, danger. Of course, after a fun time in the junkyard, she obviously wants a cupcake to cool down."
+autowrap_mode = 2
