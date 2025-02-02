@@ -37,3 +37,17 @@ func _input(event: InputEvent) -> void:
 		get_tree().change_scene_to_file("res://UI/Main_Menu.tscn")
 			
 			
+
+
+func _on_texture_button_pressed() -> void:
+	if current_level.next_level_right:
+		current_level.hide()
+		current_level = current_level.next_level_right
+		current_level.show()
+
+
+func _on_texture_button_2_pressed() -> void:
+	if current_level.next_level_left:
+		current_level.hide()
+		current_level = current_level.next_level_left
+		current_level.show()
