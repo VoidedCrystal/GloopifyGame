@@ -18,6 +18,12 @@ var dashing = false
 var dash_start = true
 var dashX = 0
 var dashY = 0
+var boost_tick = 0
+var boosted = false
+const BOOST_TIME = 10
+var boost_speed = 10000
+var boostX = 0
+var boostSignal = false
 
 var dying = false
 var dying2 = false
@@ -119,6 +125,16 @@ func _physics_process(delta: float) -> void:
 			dash_count = 1
 			canDash = true
 			
+		if boosted:
+			boost_tick += 1
+			velocity.x += 2 * (1.0 * boost_speed / BOOST_TIME) * boostX
+			if boost_tick >= BOOST_TIME:
+				boosted = false
+				boost_tick = 0
+				boostSignal = false
+		if !boosted:
+			boostX = current_direction
+			
 		
 		if is_on_wall():
 			var jumpdir = get_wall_normal()
@@ -162,10 +178,12 @@ func _physics_process(delta: float) -> void:
 				get_tree().reload_current_scene()
 	elif !win_scene:
 		win_level()
+	
 
 func die():
 	get_node("Camera2D/DeathScreen").show()
-	get_node("../AudioStreamPlayer").stop()
+	if get_node("../AudioStreamPlayer"):
+		get_node("../AudioStreamPlayer").stop()
 	$DeathSound.play()
 	dying = true
 
@@ -177,3 +195,10 @@ func win_level():
 
 func _on_dance_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://UI/LevelSelect.tscn")
+
+
+func _on_node_2d_boosted(bool: Variant) -> void:
+	if !boosted:
+		boostSignal = true
+	if boostSignal:
+		boosted = true

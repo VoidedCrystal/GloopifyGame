@@ -40,6 +40,7 @@ visible = false
 offset_top = 8.0
 offset_bottom = 136.0
 level_name = "4"
+next_scene_path = "res://Levels/Level4.tscn"
 next_level_right = NodePath("../LevelSet5")
 next_level_left = NodePath("../LevelSet3")
 

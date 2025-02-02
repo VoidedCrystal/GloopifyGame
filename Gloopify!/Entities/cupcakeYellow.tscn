@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=3 uid="uid://j0xrx8ng7h54"]
+
+[ext_resource type="Script" path="res://Entities/cupcake.gd" id="1_s6qkf"]
+[ext_resource type="Texture2D" uid="uid://dntkdwtot77nq" path="res://Assets/CupcakeSprites.png" id="2_m5f0m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22x1g"]
+atlas = ExtResource("2_m5f0m")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsm2o"]
+atlas = ExtResource("2_m5f0m")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h3mg"]
+atlas = ExtResource("2_m5f0m")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ovs0"]
+atlas = ExtResource("2_m5f0m")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyct2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22x1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsm2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h3mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ovs0")
+}],
+"loop": true,
+"name": &"Float",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as2w7"]
+radius = 16.0
+
+[sub_resource type="Animation" id="Animation_0mgev"]
+resource_name = "Float"
+length = 2.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Float"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_fql31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Float"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hixg"]
+_data = {
+"Float": SubResource("Animation_0mgev"),
+"RESET": SubResource("Animation_fql31")
+}
+
+[node name="Cupcake" type="Node2D"]
+script = ExtResource("1_s6qkf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.8125, 0.8125)
+sprite_frames = SubResource("SpriteFrames_kyct2")
+animation = &"Float"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_as2w7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0hixg")
+}
+autoplay = "Float"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
