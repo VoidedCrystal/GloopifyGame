@@ -8,7 +8,6 @@ anchors_preset = 0
 offset_right = 512.0
 offset_bottom = 128.0
 script = ExtResource("1_ojevv")
-level_art = ""
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -34,7 +33,7 @@ offset_right = 1224.0
 offset_bottom = 736.0
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
-text = "[center]Beat level 1 to unlock![/center]"
+text = "[center]Beat level 0 to unlock![/center]"
 autowrap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -77,7 +76,7 @@ offset_top = 616.0
 offset_right = 496.0
 offset_bottom = 1108.0
 theme_override_font_sizes/font_size = 30
-text = "Description"
+text = "Jessica is being chased by the police as she flees toward the nearest bakery. It just so happens that it sits atop a massive cliff no ordinary person could scale. Fortunately, Jessica is anything but ordinary."
 autowrap_mode = 2
 
 [node name="TextureRect4" type="ColorRect" parent="."]
