@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://xilk24ccme11"]
+[gd_scene load_steps=12 format=3 uid="uid://bvnek7yos0kvo"]
 
 [ext_resource type="Script" path="res://Entities/cupcake.gd" id="1_oyuhh"]
 [ext_resource type="Texture2D" uid="uid://dntkdwtot77nq" path="res://Assets/CupcakeSprites.png" id="2_hlakw"]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5etif5ubtq03"]
+[gd_scene load_steps=6 format=3 uid="uid://b6cdv6i47lhic"]
 
 [ext_resource type="Texture2D" uid="uid://dpck625gx5thf" path="res://Assets/Bakery.png" id="1_g0ogd"]
 [ext_resource type="Script" path="res://Entities/bakery.gd" id="1_ghy1v"]
-[ext_resource type="PackedScene" uid="uid://bvasesvglgdqi" path="res://Entities/confetti.tscn" id="3_14xm1"]
+[ext_resource type="PackedScene" path="res://Entities/confetti.tscn" id="3_14xm1"]
 [ext_resource type="AudioStream" uid="uid://c8jg7e7enfifg" path="res://Assets/Audio/Victory-jingle.mp3" id="4_tb662"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl6q6"]
