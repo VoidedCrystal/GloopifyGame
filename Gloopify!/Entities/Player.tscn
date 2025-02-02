@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cs7fisp5q02se"]
+[gd_scene load_steps=41 format=3 uid="uid://cs7fisp5q02se"]
 
 [ext_resource type="Script" path="res://Entities/player.gd" id="1_njyop"]
 [ext_resource type="PackedScene" uid="uid://cdqc43axjnpsd" path="res://UI/pause_menu.tscn" id="2_0o4a1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://icr073jw6gts" path="res://Assets/CrouchSheet.png" id="2_xe8kr"]
 [ext_resource type="Texture2D" uid="uid://dqr45pujo1y7g" path="res://Assets/JessSheetIRDJ.png" id="3_iyt0h"]
 [ext_resource type="Texture2D" uid="uid://hmythqbvnjxo" path="res://Assets/FallingSheet.png" id="5_8xuel"]
+[ext_resource type="Script" path="res://Entities/camera_2d.gd" id="6_rasan"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rivij"]
 atlas = ExtResource("2_remy1")
@@ -443,6 +444,9 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+safe_margin = 0.1
 script = ExtResource("1_njyop")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -456,6 +460,24 @@ shape = SubResource("CapsuleShape2D_mwixp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+script = ExtResource("6_rasan")
+
+[node name="DeathScreen" type="ColorRect" parent="Camera2D"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -4704.0
+offset_top = -2456.0
+offset_right = 4778.0
+offset_bottom = 3232.0
+color = Color(0.545098, 0, 0, 1)
+
+[node name="TimeLeft" type="Label" parent="Camera2D"]
+offset_left = 112.0
+offset_top = -128.0
+offset_right = 290.0
+offset_bottom = -105.0
+theme_override_font_sizes/font_size = 10
+text = "Time remaining: {time}"
 
 [node name="Pause Menu" parent="." instance=ExtResource("2_0o4a1")]
 visible = false

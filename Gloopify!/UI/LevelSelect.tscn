@@ -15,7 +15,7 @@ script = ExtResource("1_la4qf")
 [node name="LevelSet" parent="." node_paths=PackedStringArray("next_level_right") instance=ExtResource("2_i5jtr")]
 offset_top = 8.0
 offset_bottom = 136.0
-next_scene_path = "res://Levels/TestLevel.tscn"
+next_scene_path = "res://Levels/Level1.tscn"
 next_level_right = NodePath("../LevelSet2")
 
 [node name="LevelSet2" parent="." node_paths=PackedStringArray("next_level_right", "next_level_left") instance=ExtResource("2_i5jtr")]
@@ -23,6 +23,7 @@ visible = false
 offset_top = 8.0
 offset_bottom = 136.0
 level_name = "2"
+next_scene_path = "res://Levels/Level2.tscn"
 next_level_right = NodePath("../LevelSet3")
 next_level_left = NodePath("../LevelSet")
 

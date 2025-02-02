@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccjh7hk5oqtma"
-path="res://.godot/imported/Terrain.png-a2a5074fc012544d428452d340969dde.ctex"
+uid="uid://c81nmhxm4mddw"
+path="res://.godot/imported/RampBlock.png-78b47f022904afe86b9b297d8cd14f42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FloorTiles/Terrain.png"
-dest_files=["res://.godot/imported/Terrain.png-a2a5074fc012544d428452d340969dde.ctex"]
+source_file="res://Assets/FloorTiles/RampBlock.png"
+dest_files=["res://.godot/imported/RampBlock.png-78b47f022904afe86b9b297d8cd14f42.ctex"]
 
 [params]
 
