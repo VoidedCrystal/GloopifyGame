@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Levels/level_script.gd" id="1_ty36n"]
 [ext_resource type="Texture2D" uid="uid://cp655okg8oo7o" path="res://Assets/BackgroundCity.png" id="2_fv1df"]
 [ext_resource type="Texture2D" uid="uid://bjlluca3ddsla" path="res://Assets/FloorTiles/labTiles.png" id="3_2wh8o"]
-[ext_resource type="PackedScene" path="res://Assets/FloorTiles/Spike.tscn" id="4_bjhey"]
+[ext_resource type="PackedScene" uid="uid://btqibvp8fpebx" path="res://Assets/FloorTiles/Spike.tscn" id="4_bjhey"]
 [ext_resource type="Texture2D" uid="uid://du1x53ie13rrg" path="res://Assets/PitfallRealTop.png" id="5_f0ek5"]
-[ext_resource type="PackedScene" uid="uid://blcmksmvuq4nr" path="res://Entities/cupcakeOrange.tscn" id="6_jryro"]
+[ext_resource type="PackedScene" uid="uid://j0xrx8ng7h54" path="res://Entities/cupcakeGreen.tscn" id="6_cjogo"]
 [ext_resource type="Texture2D" uid="uid://7ci5fwr3rtfl" path="res://Assets/spritesheet.png" id="7_t3o46"]
 [ext_resource type="PackedScene" uid="uid://cs7fisp5q02se" path="res://Entities/Player.tscn" id="8_tj146"]
 [ext_resource type="AudioStream" uid="uid://tpx6qxruu4pu" path="res://Assets/Audio/Level-song.mp3" id="9_ce4sb"]
@@ -253,24 +253,24 @@ position = Vector2(544, 192)
 scale = Vector2(4, 6.75)
 texture = ExtResource("5_f0ek5")
 
-[node name="Cupcake1" parent="." instance=ExtResource("6_jryro")]
-position = Vector2(712, 256)
+[node name="Cupcake1" parent="." instance=ExtResource("6_cjogo")]
+position = Vector2(784, 264)
 ID = 1
 
-[node name="Cupcake2" parent="." instance=ExtResource("6_jryro")]
-position = Vector2(1744, 80)
+[node name="Cupcake2" parent="." instance=ExtResource("6_cjogo")]
+position = Vector2(1744, 72)
 ID = 2
 
-[node name="Cupcake3" parent="." instance=ExtResource("6_jryro")]
+[node name="Cupcake3" parent="." instance=ExtResource("6_cjogo")]
 position = Vector2(2544, -376)
 ID = 3
 
-[node name="Cupcake4" parent="." instance=ExtResource("6_jryro")]
+[node name="Cupcake4" parent="." instance=ExtResource("6_cjogo")]
 position = Vector2(3776, -352)
 ID = 4
 
-[node name="Cupcake5" parent="." instance=ExtResource("6_jryro")]
-position = Vector2(4720, -280)
+[node name="Cupcake5" parent="." instance=ExtResource("6_cjogo")]
+position = Vector2(4720, -256)
 ID = 5
 
 [node name="Boost" type="AnimatedSprite2D" parent="."]
@@ -393,6 +393,6 @@ position = Vector2(64, -1)
 shape = SubResource("RectangleShape2D_pl0lx")
 
 [node name="Player" parent="." instance=ExtResource("8_tj146")]
-position = Vector2(48, 80)
+position = Vector2(40, 112)
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://jl75mgscvc3f"]
+[gd_scene load_steps=13 format=3 uid="uid://jl75mgscvc3f"]
 
 [ext_resource type="Script" path="res://UI/level_select.gd" id="1_la4qf"]
 [ext_resource type="PackedScene" uid="uid://bx658kweduvqk" path="res://UI/levelSet.tscn" id="2_i5jtr"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://d0jhcpqhv6gas" path="res://Assets/LevelArt/Level3ArtGrey.png" id="7_lsct4"]
 [ext_resource type="Texture2D" uid="uid://djd1yrl804can" path="res://Assets/LevelArt/Level4Art.png" id="8_vxuar"]
 [ext_resource type="Texture2D" uid="uid://dev6bls8kvm2d" path="res://Assets/LevelArt/Level4Artgrey.png" id="9_ak7ry"]
+[ext_resource type="Texture2D" uid="uid://dqr1vamnvdmtl" path="res://Assets/LevelArt/Level5Art.png" id="10_e07u4"]
 [ext_resource type="Texture2D" uid="uid://b6yixsblku3hw" path="res://Assets/Arrow.png" id="10_jli5p"]
+[ext_resource type="Texture2D" uid="uid://du7jl5gp7nprg" path="res://Assets/LevelArt/Level5ArtGrey.png" id="11_ngb2h"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -54,6 +56,8 @@ next_level_left = NodePath("../LevelSet3")
 [node name="LevelSet5" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("2_i5jtr")]
 visible = false
 level_name = "5"
+level_art = ExtResource("10_e07u4")
+level_art_grey = ExtResource("11_ngb2h")
 next_level_left = NodePath("../LevelSet4")
 
 [node name="Label" type="Label" parent="."]
