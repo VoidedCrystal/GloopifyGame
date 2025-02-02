@@ -35,7 +35,7 @@ func _ready() -> void:
 		if cupcakes[4]:
 			$Cupcake5/AnimatedSprite2D.modulate.a = 0.3
 			c5 = true
-
+	Engine.time_scale = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -66,5 +66,5 @@ func _on_kill_zone_body_entered(_body: Node2D) -> void:
 	player.die()
 
 
-func _on_boost_panel_body_exited(body: Node2D) -> void:
+func _on_boost_panel_body_exited(_body: Node2D) -> void:
 	emit_signal("boosted", true)

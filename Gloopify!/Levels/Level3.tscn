@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cs7fisp5q02se" path="res://Entities/Player.tscn" id="3_2me7y"]
 [ext_resource type="PackedScene" uid="uid://btqibvp8fpebx" path="res://Assets/FloorTiles/Spike.tscn" id="5_uh6qy"]
 [ext_resource type="PackedScene" uid="uid://cfo035kfd7q6" path="res://Entities/cupcakeYellow.tscn" id="6_7efwg"]
-[ext_resource type="PackedScene" uid="uid://c5etif5ubtq03" path="res://Entities/bakery.tscn" id="6_xq2dl"]
+[ext_resource type="PackedScene" uid="uid://b6cdv6i47lhic" path="res://Entities/bakery.tscn" id="6_xq2dl"]
 [ext_resource type="AudioStream" uid="uid://tpx6qxruu4pu" path="res://Assets/Audio/Level-song.mp3" id="7_k7r5r"]
 [ext_resource type="Texture2D" uid="uid://du1x53ie13rrg" path="res://Assets/PitfallRealTop.png" id="8_wfjmd"]
 

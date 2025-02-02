@@ -197,7 +197,7 @@ func _on_dance_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://UI/LevelSelect.tscn")
 
 
-func _on_node_2d_boosted(bool: Variant) -> void:
+func _on_node_2d_boosted(_bool: Variant) -> void:
 	if !boosted:
 		boostSignal = true
 	if boostSignal:
