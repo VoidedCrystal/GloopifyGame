@@ -138,7 +138,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.x == 0 and velocity.y == 0 and is_on_floor():
 		$AnimationPlayer.play("Idle")
 	
-	if Input.is_action_just_pressed("reset"):
+	if Input.is_action_just_pressed("reset") and not dying and not dying2:
 		get_node("CollisionShape2D").disabled = true
 		die()
 	
